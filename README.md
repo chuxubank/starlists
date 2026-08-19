@@ -78,12 +78,10 @@ Exit codes: `0` ok, `1` generic, `2` auth, `3` not found, `4` conflict.
 
 ## Agents and Emacs
 
-Agent skill: [`.grok/skills/starlists/SKILL.md`](.grok/skills/starlists/SKILL.md). Pointer: [`AGENTS.md`](AGENTS.md).
-
-Install the skill for Grok Build (any working directory):
+User skill for Grok Build (or any agent that loads `SKILL.md`): [`skills/starlists/SKILL.md`](skills/starlists/SKILL.md).
 
 ```bash
-cp -R .grok/skills/starlists ~/.grok/skills/
+cp -R skills/starlists ~/.grok/skills/
 ```
 
 Proposal schema: [`schema/proposal.v1.json`](schema/proposal.v1.json). Example: [`examples/proposal.example.json`](examples/proposal.example.json).

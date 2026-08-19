@@ -21,7 +21,7 @@ stars init
 
 Auth: `GITHUB_TOKEN` / `GH_TOKEN` / `STARS_GITHUB_TOKEN` / `gh auth token`. List writes need `user` scope (`gh auth refresh -h github.com -s user`).
 
-Database default: `~/.local/share/stars/stars.db`. Config: `~/.config/stars/config.toml`. Schema: `schema/proposal.v1.json` in this repo.
+Database default: `~/.local/share/stars/stars.db`. Config: `~/.config/stars/config.toml`. Proposal schema: https://github.com/chuxubank/starlists/blob/main/schema/proposal.v1.json
 
 ## Safe read path
 
