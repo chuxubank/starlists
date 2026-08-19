@@ -7,5 +7,4 @@
 .env
 config.toml
 /tmp
-.grok/
 examples/proposal-retax.json
