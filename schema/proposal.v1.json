@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://stars.local/schema/proposal.v1.json",
+  "title": "stars proposal v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version"],
+  "properties": {
+    "version": { "const": 1 },
+    "id": { "type": "string", "description": "Optional plan id. Generated as PLAN_YYYYMMDDHHMMSS if omitted." },
+    "notes": { "type": "string" },
+    "lists": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "create": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name"],
+            "additionalProperties": false,
+            "properties": {
+              "slug": { "type": "string" },
+              "name": { "type": "string" },
+              "description": { "type": "string" },
+              "is_private": { "type": "boolean" }
+            }
+          }
+        },
+        "rename": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["slug", "name"],
+            "additionalProperties": false,
+            "properties": {
+              "slug": { "type": "string" },
+              "name": { "type": "string" }
+            }
+          }
+        },
+        "update": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["slug"],
+            "additionalProperties": false,
+            "properties": {
+              "slug": { "type": "string" },
+              "description": { "type": "string" },
+              "is_private": { "type": "boolean" }
+            }
+          }
+        },
+        "merge": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["from", "into"],
+            "additionalProperties": false,
+            "properties": {
+              "from": { "type": "array", "items": { "type": "string" } },
+              "into": { "type": "string" }
+            }
+          }
+        },
+        "delete": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "memberships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["repo", "lists"],
+        "additionalProperties": false,
+        "properties": {
+          "repo": { "type": "string", "description": "owner/repo" },
+          "lists": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Full set of list slugs after apply. Empty removes the repo from every list."
+          }
+        }
+      }
+    }
+  }
+}

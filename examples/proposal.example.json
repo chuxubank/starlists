@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "notes": "Example only. Export a corpus with `stars export --for-agent`, classify, then import.",
+  "lists": {
+    "create": [
+      {
+        "slug": "web-mapping",
+        "name": "Web Mapping",
+        "description": "Browser maps, tiles, and Web GIS.",
+        "is_private": true
+      }
+    ],
+    "rename": [],
+    "update": [],
+    "merge": [],
+    "delete": []
+  },
+  "memberships": [
+    {
+      "repo": "owner/example",
+      "lists": ["web-mapping"]
+    }
+  ]
+}
