@@ -6,17 +6,21 @@ GitHub’s own Lists are a public-preview grouping tool with no REST API, a ~32-
 
 ## Install
 
+CLI:
+
 ```bash
 cargo install --git https://github.com/chuxubank/starlists --locked
 ```
 
-Or from a clone:
+Or from a clone: `make install-local` (installs `stars` to `~/.local/bin`).
+
+Agent skill:
 
 ```bash
-make install-local   # → ~/.local/bin/stars
+npx skills add chuxubank/starlists
+# or
+bunx skills add chuxubank/starlists
 ```
-
-The command name is `stars`.
 
 ## Quick start
 
@@ -78,10 +82,12 @@ Exit codes: `0` ok, `1` generic, `2` auth, `3` not found, `4` conflict.
 
 ## Agents and Emacs
 
-User skill for Grok Build (or any agent that loads `SKILL.md`): [`skills/starlists/SKILL.md`](skills/starlists/SKILL.md).
+Companion skill: [`skills/starlists/SKILL.md`](skills/starlists/SKILL.md).
 
 ```bash
-cp -R skills/starlists ~/.grok/skills/
+npx skills add chuxubank/starlists
+# or
+bunx skills add chuxubank/starlists
 ```
 
 Proposal schema: [`schema/proposal.v1.json`](schema/proposal.v1.json). Example: [`examples/proposal.example.json`](examples/proposal.example.json).
